@@ -15,7 +15,14 @@ Router.map(function() {
   this.route('authenticated', { path: '/'}, function() {
 
     // Huawei
-    this.route('network-service-tab', { path: '/network'});
+    this.route('network-service-tab', { path: '/network'}, function() {
+      this.route('index', {path: '/'});
+      this.route('service-catalog', {path: '/catalog'});
+      this.route('service-functions', {path: '/functions'});
+      this.route('service-workflows', {path: '/workflows'});
+      this.route('service-policies', {path: '/policies'});
+    });
+
     // Settings
     this.resource('settings', function() {
       this.route('apikeys', {path: '/api'});

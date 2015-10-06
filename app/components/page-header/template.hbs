@@ -114,10 +114,10 @@
 <div class="bottom-row">
   <nav>
     {{#if isNetwork}}
-      <a href="#">Service Catalog</a>
-      <a href="#">Service Functions</a>
-      <a href="#">Service Workflows</a>
-      <a href="#">Service Policies</a>
+    {{#link-to 'authenticated.network-service-tab.service-catalog'}}<i class="fa fa-book"></i> Service Catalog{{/link-to}}
+    {{#link-to 'authenticated.network-service-tab.service-functions'}}<i class="fa fa-cogs"></i> Service Functions{{/link-to}}
+    {{#link-to 'authenticated.network-service-tab.service-workflows'}}<i class="fa fa-link"></i> Service Workflows{{/link-to}}
+    {{#link-to 'authenticated.network-service-tab.service-policies'}}<i class="fa fa-tags"></i> Service Policies{{/link-to}}
     {{/if}}
     {{#if isInfrastructureTab}}
       {{#link-to "hosts"}}<i class="icon icon-host"></i> Hosts{{/link-to}}
