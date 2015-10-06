@@ -14,6 +14,8 @@ Router.map(function() {
   this.route('logout');
   this.route('authenticated', { path: '/'}, function() {
 
+    // Huawei
+    this.route('network-service-tab', { path: '/network'});
     // Settings
     this.resource('settings', function() {
       this.route('apikeys', {path: '/api'});
@@ -46,6 +48,7 @@ Router.map(function() {
         this.route('process', {path: '/:process_id'});
       });
     });
+
 
     // Infrastructure
     this.resource('infrastructure-tab', {path: '/infra'}, function() {
@@ -83,6 +86,9 @@ Router.map(function() {
         this.route('detail', {path: '/:certificate_id'});
       });
     });
+
+
+
 
     // Applications
     this.resource('applications-tab', {path: '/apps'}, function() {

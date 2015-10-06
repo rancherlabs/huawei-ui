@@ -2,11 +2,8 @@
   <div class="logo" {{action "showAbout"}} aria-label="About Rancher"></div>
   <nav>
     {{#if project}}
-      {{#link-to "applications-tab"}}Applications{{/link-to}}
       {{#link-to "infrastructure-tab"}}Infrastructure{{/link-to}}
-      {{#if isAdmin}}
-        {{#link-to "admin-tab"}}Admin{{/link-to}}
-      {{/if}}
+      {{#link-to "authenticated.network-service-tab"}}Network Service{{/link-to}}
     {{/if}}
   </nav>
 
@@ -116,6 +113,12 @@
 
 <div class="bottom-row">
   <nav>
+    {{#if isNetwork}}
+      <a href="#">Service Catalog</a>
+      <a href="#">Service Functions</a>
+      <a href="#">Service Workflows</a>
+      <a href="#">Service Policies</a>
+    {{/if}}
     {{#if isInfrastructureTab}}
       {{#link-to "hosts"}}<i class="icon icon-host"></i> Hosts{{/link-to}}
       {{#link-to "containers"}}<i class="icon icon-box"></i> Containers{{/link-to}}

@@ -40,6 +40,10 @@ export default Ember.Component.extend({
     return this.get('currentPath').indexOf('authenticated.admin-tab') === 0;
   }.property('currentPath'),
 
+  isNetwork: function() {
+    return this.get('currentPath').indexOf('authenticated.network-service-tab') === 0;
+  }.property('currentPath'),
+
   showHostSetup: function() {
     return this.get('isAdmin') && this.get('store').hasRecordFor('schema','setting');
   }.property(),
