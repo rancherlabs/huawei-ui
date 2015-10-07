@@ -76,6 +76,14 @@ fieldset[disabled] .btn {
       cursor: pointer;
     }
   }
+  &.searchable {
+    .fa-search {
+      position: absolute;
+      left: 23px;
+      top: 14px;
+      opacity: 0.3;
+    }
+  }
 }
 
 .form-control {

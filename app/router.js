@@ -17,7 +17,7 @@ Router.map(function() {
     // Huawei
     this.route('network-service-tab', { path: '/network'}, function() {
       this.route('index', {path: '/'});
-      this.route('service-catalog', {path: '/catalog'});
+      this.route('service-catalog', { path: '/catalog/:catalog' });
       this.route('service-functions', {path: '/functions'});
       this.route('service-workflows', {path: '/workflows'});
       this.route('service-policies', {path: '/policies'});
@@ -207,12 +207,12 @@ Router.map(function() {
     otherParams: 'originalModel',
   });
 
-  // End: Modals
   this.modal('edit-account', {
     dismissWithOutsideClick: false,
     withParams: 'editAccount',
     otherParams: 'originalModel',
   });
+  // End: Modals
 
 });
 

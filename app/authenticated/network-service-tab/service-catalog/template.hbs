@@ -1,10 +1,25 @@
 <div class="catalog left-nav col-md-2 col-sm-2">
   <h3 class="r-mt10 r-mb15">Catalog</h3>
-  <li class="nav nav-list">
-  </li>
+  <ul class="nav nav-list">
+    <li class={{if (eq model.selectedCatalog 'all') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'all'}}<i class="fa fa-globe"></i> All{{/link-to}}</li>
+    <li class={{if (eq model.selectedCatalog 'analytics') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'analytics'}}<i class="fa fa-bar-chart"></i> Analytics{{/link-to}}</li>
+    <li class={{if (eq model.selectedCatalog 'cache') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'cache'}}<i class="fa fa-download"></i>i Cache{{/link-to}}</li>
+    <li class={{if (eq model.selectedCatalog 'load') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'load'}}<i class="fa fa-sitemap"></i> Load Balancer{{/link-to}}</li>
+    <li class={{if (eq model.selectedCatalog 'nat') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'nat'}}<i class="fa fa-server"></i> NAT{{/link-to}}</li>
+    <li class={{if (eq model.selectedCatalog 'policy') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'policy'}}<i class="fa fa-tags"></i> Policy Control{{/link-to}}</li>
+    <li class={{if (eq model.selectedCatalog 'video') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'video'}}<i class="fa fa-video-camera"></i> Video Opt.{{/link-to}}</li>
+    <li class={{if (eq model.selectedCatalog 'wan') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'wan'}}<i class="fa fa-upload"></i> WAN Opt.{{/link-to}}</li>
+    <li class={{if (eq model.selectedCatalog 'web') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'web'}}<i class="fa fa-laptop"></i> Web Opt.{{/link-to}}</li>
+    <li class={{if (eq model.selectedCatalog 'vpn') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'vpn'}}<i class="fa fa-lock"></i> VPN{{/link-to}}</li>
+    <li class={{if (eq model.selectedCatalog 'security') 'active' ''}}>{{#link-to 'authenticated.network-service-tab.service-catalog' 'security'}}<i class="fa fa-user-secret"></i> Security{{/link-to}}</li>
+  </ul>
 </div>
 <section>
   <div class="col-md-10 col-sm-10">
+    <div class="page-header grouped">
+      <h2>All Catalog Items |</h2>
+      <button class="btn btn-primary btn-sm">Add Service Function</button>
+    </div>
     <div class="form clearfix r-mb10">
       <div class="btn-group searchable col-md-12">
         <i class="fa fa-search"></i>
