@@ -1,0 +1,31 @@
+<section class="modal-deploy-service container-fluid">
+  <h1 class="text-center header">Add Service Function</h1>
+  <hr>
+  <div class="horizontal-form center-block">
+    <div class="row form-group r-mt20">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label>Name*</label>
+      </div>
+      <div class="col-sm-12 col-md-10">
+        {{input class='form-control' placeholder='Service Function'}}
+      </div>
+    </div>
+    <div class="row form-group r-mt20">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label>Description*</label>
+      </div>
+      <div class="col-sm-12 col-md-10">
+        {{textarea class='form-control' rows='4' placeholder='A smal description of your service function'}}
+      </div>
+    </div>
+    <div class="row form-group r-mt20">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label>Docker Image URL*</label>
+      </div>
+      <div class="col-sm-12 col-md-10">
+        {{input class='form-control'  placeholder='ubuntu-precise-core-cloudimg-amd64-root.tar.gz'}}
+      </div>
+    </div>
+  </div>
+  {{partial 'add-cancel'}}
+</section>

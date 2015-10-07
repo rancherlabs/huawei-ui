@@ -218,6 +218,12 @@ Router.map(function() {
     withParams: 'newServiceFunction',
     otherParams: 'originalModel',
   });
+
+  this.modal('add-service-function', {
+    dismissWithOutsideClick: false,
+    withParams: 'addServiceFunction',
+    otherParams: 'originalModel',
+  });
   // End: Modals
 
 });

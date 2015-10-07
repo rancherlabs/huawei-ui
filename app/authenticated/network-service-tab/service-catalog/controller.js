@@ -3,7 +3,12 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   needs: ['application'],
   actions: {
-    add() {},
+    add() {
+      this.get('controllers.application').setProperties({
+        addServiceFunction: true,
+        originalModel: this.get('model'),
+      });
+    },
     launch() {
       this.get('controllers.application').setProperties({
         newServiceFunction: true,
