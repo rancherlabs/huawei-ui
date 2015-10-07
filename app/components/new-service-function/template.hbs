@@ -1,0 +1,60 @@
+<section class="modal-deploy-service container-fluid">
+  <h1 class="text-center header">Deploy Service Function</h1>
+  <div class="content center-block r-mt20">
+    <div class="image-container r-mr20  r-pt10 pull-left">
+      <img src="https://placeholdit.imgix.net/~text?5&w=150&h=155" alt="">
+    </div>
+    <div class="service-info">
+      <h3 class="r-mb15">Skyfire Controller</h3>
+      <div class="form-group">
+        <label>Description</label>
+        <div>A service for optimizing video.</div>
+      </div>
+      <div class="form-group">
+        <label>Image</label>
+        <div>skyfire_controller.img</div>
+      </div>
+      <div class="form-group">
+        <label>Destination File</label>
+        <div>def.txt</div>
+      </div>
+    </div>
+    <hr>
+    <div class="content-input center-block">
+      <div class="row form-group r-mt20">
+        <div class="col-sm-12 col-md-2 form-label">
+          <label>Name*</label>
+        </div>
+        <div class="col-sm-12 col-md-10 r-mb20">
+          {{input class='form-control'}}
+        </div>
+        <div class="col-sm-12 col-md-2 form-label">
+          <label>Scale*</label>
+        </div>
+        <div class="col-sm-12 col-md-10">
+          {{input-slider value=scaleValue valueMax=11 scaleMax=12}}
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="config-params">
+      <div class="toggle-advanced">
+        <h3 class="r-mb15 text-center">
+            <a {{action "toggleConfig"}}>Config Parameters {{#if configShown}}<i class="icon icon-chevron-up"></i>{{else}}<i class="icon icon-chevron-down"></i>{{/if}}</a>
+        </h3>
+        <div class={{unless configShown 'hide'}}>
+          <div class="row form-group r-mt20">
+            {{! each}}
+            <div class="col-sm-12 col-md-2 form-label">
+              <label>Key 1*</label>
+            </div>
+            <div class="col-sm-12 col-md-10 r-mb20">
+              {{input class='form-control'}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{partial 'launch-or-cancel'}}
+</div>
+</section>

@@ -212,6 +212,12 @@ Router.map(function() {
     withParams: 'editAccount',
     otherParams: 'originalModel',
   });
+
+  this.modal('new-service-function', {
+    dismissWithOutsideClick: false,
+    withParams: 'newServiceFunction',
+    otherParams: 'originalModel',
+  });
   // End: Modals
 
 });

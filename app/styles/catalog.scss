@@ -78,3 +78,24 @@ $lines-to-show: 4;
     margin-bottom: -35px;
   }
 }
+
+
+/*Modal Content*/
+.modal-deploy-service {
+  .header {
+    font-weight: 200;
+  }
+  .image-container {
+    width: 150px;
+    display: inline-block;
+  }
+  .content {
+    width: 50%;
+  }
+  .service-info {
+    display: inline-block;
+  }
+  hr {
+    margin: 10px -70px;
+  }
+}
