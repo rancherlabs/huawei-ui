@@ -1,1 +1,11 @@
-{{outlet}}
+<section class="service-functions">
+  <div class="clearfix r-mb20">
+    <h1 class="r-ml15 r-mb15">Service Functions</h1>
+    <div class="btn-group searchable col-md-12">
+      <i class="fa fa-search"></i>
+      {{input placeholder='search' class='form-control r-pl25' value=search}}
+    </div>
+  </div>
+  {{!#each servicefunction}}
+  {{service-function}}
+</section>

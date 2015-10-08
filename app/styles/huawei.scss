@@ -1,0 +1,140 @@
+$font-size: 12px;
+$line-height: 1.4;
+$lines-to-show: 4;
+.catalog {
+    &.left-nav {
+        background: white;
+        height: calc(100vh - 105px);
+    }
+    .nav-list {
+        li {
+            border-bottom: 1px solid rgba(55, 183, 225, 0.2);
+            padding: 10px;
+            i {
+                margin-right: 8px;
+            }
+            a {
+                color: black;
+                padding: 0;
+                &:hover {
+                    color: #67BFE4;
+                    background-color: transparent;
+                }
+                &:focus {
+                    background-color: transparent;
+                }
+            }
+            &.active {
+                background-color: #E2E4ED;
+                border-bottom: 1px solid #B2D8EA;
+                a {
+                    color: #67BFE4;
+                    padding: 0px;
+                }
+            }
+        }
+    }
+}
+
+.page-header {
+    &.grouped {
+        margin-top: 0;
+        padding: 0 20px;
+        h2 {
+            display: inline-block;
+        }
+        button {
+            vertical-align: bottom;
+        }
+    }
+}
+
+.container-catalog {
+    background: white;
+    height: 270px;
+    width: 250px;
+    margin-right: 35px;
+    margin-bottom: 35px;
+    float: left;
+    .description {
+        display: block;
+        /* Fallback for non-webkit */
+        display: -webkit-box;
+        max-width: 200px;
+        height: $font-size*$line-height*$lines-to-show;
+        /* Fallback for non-webkit */
+        margin: auto;
+        font-size: $font-size;
+        line-height: $line-height;
+        -webkit-line-clamp: $lines-to-show;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .btn {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-bottom: -35px;
+    }
+}
+
+.service-functions {
+    .header {
+        padding-bottom: 10px;
+        position: relative;
+        &.bordered {
+            border-bottom: 1px solid #E7E7E7;
+            margin-bottom: 15px;
+        }
+    }
+    .fa-book,
+    .fa-server {
+        margin-left: 30px;
+        margin-right: 10px;
+        font-size: 22px;
+        color: #C0C0C0;
+    }
+    .fa-server {
+        font-size: 15px;
+    }
+    .label.label-success {
+        vertical-align: text-top;
+        margin-left: 100px;
+        display: inline-block;
+        margin-top: -1px;
+        font-size: 95%;
+    }
+    .toggle {
+        position: absolute;
+        top: 16px;
+        right: 10px;
+    }
+    .container-indv {
+        border-bottom: 1px solid #E7E7E7;
+        margin-left: 67px;
+        margin-right: 0px;
+        padding-bottom: 10px;
+    }
+}
+
+
+/*Modal Content*/
+
+.modal-deploy-service {
+    .header {
+        font-weight: 200;
+    }
+    .image-container {
+        width: 150px;
+        display: inline-block;
+    }
+    .content {
+        width: 50%;
+    }
+    .service-info {
+        display: inline-block;
+    }
+    hr {
+        margin: 10px -70px;
+    }
+}
