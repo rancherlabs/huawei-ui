@@ -1,1 +1,11 @@
-{{outlet}}
+<section class="service-workflows">
+  <div class="clearfix r-mb20">
+    <div class="page-header grouped">
+      <h2>Service Workflows |</h2>
+      <button class="btn btn-primary btn-sm" {{action 'add'}}>Add Workflow</button>
+    </div>
+    {{!#each workflow}}
+    {{service-workflow}}
+  </div>
+</section>
+
