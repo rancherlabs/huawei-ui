@@ -8,6 +8,9 @@ export default Ember.Component.extend({
           this.get('serviceFunctions').pushObject({value: ''});
         });
       }
+    },
+    cancel() {
+      this.sendAction('dismiss');
     }
   },
   serviceFunctions: [

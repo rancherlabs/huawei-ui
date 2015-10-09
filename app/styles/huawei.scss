@@ -78,7 +78,8 @@ $lines-to-show: 4;
   }
 }
 .service-functions,
-.service-workflows {
+.service-workflows,
+.service-policies {
   .header {
     padding-bottom: 10px;
     position: relative;
@@ -121,7 +122,8 @@ $lines-to-show: 4;
   }
 }
 
-.service-workflows {
+.service-workflows,
+.service-policies {
   .fa-retweet {
     margin-left: 30px;
     margin-right: 10px;
@@ -180,6 +182,22 @@ $lines-to-show: 4;
       margin-bottom: 20px;
     }
   }
+}
+
+.service-policies {
+  .container-service {
+    height: 100px;
+    width: 200px;
+    h4 {
+      margin-top: 10%;
+    }
+    &:before {
+      right: 64.5%;
+      top: 43.8%;
+    }
+
+  }
+
 }
 
 
