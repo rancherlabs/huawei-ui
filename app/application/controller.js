@@ -16,6 +16,7 @@ export default Ember.Controller.extend({
 
   showAbout: null,
   addServiceFunction: null,
+  addWorkflow: null,
   editAccount: null,
   editApikey: null,
   editApikeyIsNew: null,
@@ -28,5 +29,5 @@ export default Ember.Controller.extend({
   editRegistry: null,
   newServiceFunction: null,
   showShell: null,
-  showContainerLogs: null,
+  showContainerLogs: null
 });

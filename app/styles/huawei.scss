@@ -184,11 +184,14 @@ $lines-to-show: 4;
 
 
 /*Modal Content*/
-
-.modal-deploy-service {
+.modal-deploy-service,
+.modal-add-workflow {
   .header {
     font-weight: 200;
   }
+}
+
+.modal-deploy-service {
   .image-container {
     width: 150px;
     display: inline-block;
@@ -201,5 +204,29 @@ $lines-to-show: 4;
   }
   hr {
     margin: 10px -70px;
+  }
+}
+
+.modal-add-workflow {
+  .fa-cogs {
+    font-size: 19px;
+    color:#C0C0C0;
+    margin-right: 5px;
+  }
+  h4 {
+    color: #C0C0C0;
+  }
+  .select-service {
+    display: inline-block;
+    width: 90%;
+  }
+  .fa-bars {
+    font-size: 19px;
+    margin-left: 20px;
+    margin-top: 12px;
+    color: #37B7E1;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

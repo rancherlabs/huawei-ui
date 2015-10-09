@@ -1,9 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  needs: ['application'],
   actions: {
     add() {
-      console.log('add workflow');
+      this.get('controllers.application').setProperties({
+        addWorkflow: true,
+        originalModel: this.get('model'),
+      });
     }
   }
 });

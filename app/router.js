@@ -224,6 +224,12 @@ Router.map(function() {
     withParams: 'addServiceFunction',
     otherParams: 'originalModel',
   });
+
+  this.modal('add-workflow', {
+    dismissWithOutsideClick: false,
+    withParams: 'addWorkflow',
+    otherParams: 'originalModel',
+  });
   // End: Modals
 
 });
