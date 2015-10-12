@@ -185,6 +185,12 @@ $lines-to-show: 4;
 }
 
 .service-policies {
+  .fa-tags {
+    margin-left: 30px;
+    margin-right: 10px;
+    font-size: 22px;
+    color: #C0C0C0;
+  }
   .container-service {
     height: 100px;
     width: 200px;
@@ -195,7 +201,6 @@ $lines-to-show: 4;
       right: 64.5%;
       top: 43.8%;
     }
-
   }
 
 }
@@ -203,7 +208,8 @@ $lines-to-show: 4;
 
 /*Modal Content*/
 .modal-deploy-service,
-.modal-add-workflow {
+.modal-add-workflow,
+.modal-add-policy {
   .header {
     font-weight: 200;
   }
@@ -246,5 +252,16 @@ $lines-to-show: 4;
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+.modal-add-policy {
+  .select-service {
+    display: inline-block;
+    width: 200px;
+    margin: 0 20px;
+  }
+  .and-else {
+    margin-left: 37px;
   }
 }

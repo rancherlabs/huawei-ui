@@ -17,6 +17,7 @@ export default Ember.Controller.extend({
   showAbout: null,
   addServiceFunction: null,
   addWorkflow: null,
+  addPolicy: null,
   editAccount: null,
   editApikey: null,
   editApikeyIsNew: null,

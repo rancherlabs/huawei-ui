@@ -1,0 +1,56 @@
+<section class="modal-add-policy container-fluid">
+  <h1 class="text-center header">Add Policy</h1>
+  <hr>
+  <div class="horizontal-form center-block">
+    <div class="row form-group r-mt20">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label>Name*</label>
+      </div>
+      <div class="col-sm-12 col-md-10">
+        {{input class='form-control' placeholder='Service Policy Name'}}
+      </div>
+    </div>
+    <div class="horizontal-form center-block">
+      {{#each savedServicePolicy as |policy|}}
+        <div class="row form-group r-mt20">
+          <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2">
+            <h3 class="inline-block">If</h3>
+            <select name="" class="select-service form-control">
+              {{#each policies as |policy index|}}
+                <option value={{policy.name}}>{{policy.name}}</option>
+              {{/each}}
+            </select>
+            <h3 class="inline-block">Is</h3>
+            <select name="" class="select-service form-control">
+              {{#each subscribers as |sub index|}}
+                <option value={{sub}}>{{sub}}</option>
+              {{/each}}
+            </select>
+            <div class="form-control-static inline-block">
+              <button class="btn-circle-plus btn-circle-text" {{action 'addPolicyDetails'}}>&nbsp;</button>
+            </div>
+          </div>
+          {{#if servicePolicyCount }}
+            <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 r-mt20">
+              <select name="" class="select-service form-control and-else">
+                  <option value='and'>And</option>
+                  <option value='or'>Or</option>
+                  <option value='not'>Not</option>
+                  <option value='and/or'>And/Or</option>
+              </select>
+            </div>
+          {{/if}}
+        </div>
+      {{/each}}
+      <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 r-mt20 r-mb20">
+        <h3 class="inline-block">Attach to Service Workflow</h3>
+        <select name="" class="select-service form-control">
+          {{#each subscribers as |sub index|}}
+            <option value={{sub}}>{{sub}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+  </div>
+  {{partial 'add-cancel'}}
+</section>

@@ -230,6 +230,12 @@ Router.map(function() {
     withParams: 'addWorkflow',
     otherParams: 'originalModel',
   });
+
+  this.modal('add-policy', {
+    dismissWithOutsideClick: false,
+    withParams: 'addPolicy',
+    otherParams: 'originalModel',
+  });
   // End: Modals
 
 });
