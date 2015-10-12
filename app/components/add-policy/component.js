@@ -17,12 +17,20 @@ export default Ember.Component.extend(NewOrEdit, {
           }
         );
       });
+    },
+    removePolicyDetails(index) {
+      Ember.run(()=> {
+        this.get('savedServicePolicy').removeAt(index);
+      });
     }
   },
   subscribers: ['mia', 'bob', 'ted', 'lynn'],
   servicePolicyCount: Ember.computed('savedServicePolicy.[]', function() {
     return this.get('savedServicePolicy').length > 1 ? true : false;
   }),
+  count: function() {
+    return this.get('savedServicePolicy').length-1;
+  }.property('savedServicePolicy'),
   savedServicePolicy: [
     {
       servicePolicyName: '',

@@ -11,9 +11,21 @@
       </div>
     </div>
     <div class="horizontal-form center-block">
-      {{#each savedServicePolicy as |policy|}}
-        <div class="row form-group r-mt20">
+      {{#each savedServicePolicy as |polica index|}}
+        <div class="row form-group {{if (eq index 0) 'r-mt20' ''}}">
           <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2">
+          {{#if servicePolicyCount }}
+            {{#if (gte index count )}}
+              <div class="col-sm-12 col-md-12 r-mb20">
+                <select name="" class="select-service form-control">
+                    <option value='and'>And</option>
+                    <option value='or'>Or</option>
+                    <option value='not'>Not</option>
+                    <option value='and/or'>And/Or</option>
+                </select>
+              </div>
+            {{/if}}
+          {{/if}}
             <h3 class="inline-block">If</h3>
             <select name="" class="select-service form-control">
               {{#each policies as |policy index|}}
@@ -26,20 +38,16 @@
                 <option value={{sub}}>{{sub}}</option>
               {{/each}}
             </select>
-            <div class="form-control-static inline-block">
-              <button class="btn-circle-plus btn-circle-text" {{action 'addPolicyDetails'}}>&nbsp;</button>
-            </div>
+            {{#if (eq index 0)}}
+              <div class="form-control-static inline-block">
+                <button class="btn-circle-plus btn-circle-text" {{action 'addPolicyDetails'}}>&nbsp;</button>
+              </div>
+            {{else}}
+              <div class="form-control-static inline-block">
+                <button class="btn-circle-x btn-circle-text" {{action 'removePolicyDetails' index}}>&nbsp;</button>
+              </div>
+            {{/if}}
           </div>
-          {{#if servicePolicyCount }}
-            <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 r-mt20">
-              <select name="" class="select-service form-control and-else">
-                  <option value='and'>And</option>
-                  <option value='or'>Or</option>
-                  <option value='not'>Not</option>
-                  <option value='and/or'>And/Or</option>
-              </select>
-            </div>
-          {{/if}}
         </div>
       {{/each}}
       <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 r-mt20 r-mb20">
