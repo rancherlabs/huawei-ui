@@ -26,6 +26,36 @@
         {{input class='form-control'  placeholder='ubuntu-precise-core-cloudimg-amd64-root.tar.gz'}}
       </div>
     </div>
+    <div class="row form-group r-mt20">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label>Definition File</label>
+      </div>
+      <div class="col-sm-12 col-md-10">
+        <div class="input-group">
+          {{input class='form-control file-upload' readonly=true value=destFile}}
+          <span class="input-group-btn">
+            <span class="btn btn-primary btn-file">
+              Browse {{input class='form-control' type='file' value=destFile}}
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group r-mt20">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label>Icon</label>
+      </div>
+      <div class="col-sm-12 col-md-10">
+        <div class="input-group">
+          {{input class='form-control file-upload' readonly=true value=icon}}
+          <span class="input-group-btn">
+            <span class="btn btn-primary btn-file">
+              Browse {{input class='form-control' type='file' value=icon}}
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
   {{partial 'add-cancel'}}
 </section>

@@ -7,4 +7,6 @@ export default Ember.Component.extend(NewOrEdit, {
       this.sendAction('dismiss');
     }
   },
+  destFile: '',
+  icon: ''
 });

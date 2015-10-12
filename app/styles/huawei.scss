@@ -229,6 +229,28 @@ $lines-to-show: 4;
   hr {
     margin: 10px -70px;
   }
+  .file-upload {
+    border: thin dashed #65C8E8;
+  }
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+  }
 }
 
 .modal-add-workflow {
