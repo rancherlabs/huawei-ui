@@ -13,23 +13,27 @@
     <div class="horizontal-form center-block">
       <h1 class="text-center header r-mt20">Service Workflow Elements</h1>
       <hr>
-      {{#each serviceFunctions as |function index|}}
-        <div class="row form-group r-mt20">
-          <div class="col-sm-12 col-md-3 form-label r-pt5">
-            <i class="fa fa-cogs"></i>
-            <h4 class="text-center inline-block">Service Function</h4>
-          </div>
-          <div class="col-sm-12 col-md-9">
-            <select name="item-{{index}}" class="select-service form-control col-md-6" {{action 'selectChange' index on='change'}}>
-              <option value="0">Select a Service Function</option>
-              <option value="1">Skyfire</option>
-              <option value="2">TrendMicro</option>
-              <option value="3">Something</option>
-            </select>
-            <i class="fa fa-bars"></i>
-          </div>
-        </div>
-      {{/each}}
+      {{#ember-dragula config=dragulaconfig dragulaEvent='dragulaEvent' }}
+        {{#each serviceFunctions as |function index|}}
+            {{#ember-dragula-container }}
+              <div class="row form-group r-mt20">
+                <div class="col-sm-12 col-md-3 form-label r-pt5">
+                  <i class="fa fa-cogs"></i>
+                  <h4 class="text-center inline-block">Service Function</h4>
+                </div>
+                <div class="col-sm-12 col-md-9">
+                  <select name="item-{{index}}" class="select-service form-control col-md-6" {{action 'selectChange' index on='change'}}>
+                    <option value="0">Select a Service Function</option>
+                    <option value="1">Skyfire</option>
+                    <option value="2">TrendMicro</option>
+                    <option value="3">Something</option>
+                  </select>
+                  <i class="fa fa-bars"></i>
+                </div>
+              </div>
+          {{/ember-dragula-container}}
+        {{/each}}
+      {{/ember-dragula}}
     </div>
     {{partial 'add-cancel'}}
   </div>
