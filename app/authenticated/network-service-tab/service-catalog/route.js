@@ -6,6 +6,10 @@ export default Ember.Route.extend({
     if (params.catalog) {
       newModel.selectedCatalog = params.catalog;
     }
-    return newModel;
+    return Ember.$.ajax('/hw/serviceFunction', 'GET').then((response) => {
+      newModel.catalog = response;
+      return newModel;
+    }, function(/*error*/){});
+
   }
 });

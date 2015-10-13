@@ -9,10 +9,10 @@ export default Ember.Controller.extend({
         originalModel: this.get('model'),
       });
     },
-    launch() {
+    launch(model) {
       this.get('controllers.application').setProperties({
         newServiceFunction: true,
-        originalModel: this.get('model'),
+        originalModel: model,
       });
     }
   }

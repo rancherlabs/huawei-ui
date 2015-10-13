@@ -2,21 +2,21 @@
   <h1 class="text-center header">Deploy Service Function</h1>
   <div class="content center-block r-mt20">
     <div class="image-container r-mr20  r-pt10 pull-left">
-      <img src="https://placeholdit.imgix.net/~text?5&w=150&h=155" alt="">
+      <img src="/hw{{serviceFunction.iconLocation}}" alt="" class="function-img">
     </div>
     <div class="service-info">
-      <h3 class="r-mb15">Skyfire Controller</h3>
+      <h3 class="r-mb15">{{serviceFunction.name}}</h3>
       <div class="form-group">
         <label>Description</label>
-        <div>A service for optimizing video.</div>
+        <div>{{serviceFunction.description}}</div>
       </div>
       <div class="form-group">
         <label>Image</label>
-        <div>skyfire_controller.img</div>
+        <div>{{serviceFunction.image}}</div>
       </div>
       <div class="form-group">
         <label>Destination File</label>
-        <div>def.txt</div>
+        <div>{{serviceFunction.fileLocation}}</div>
       </div>
     </div>
     <hr>
@@ -27,13 +27,16 @@
         <label>Name*</label>
       </div>
       <div class="col-sm-12 col-md-10 r-mb20">
-        {{input class='form-control'}}
+        {{input class='form-control' value=serviceFunctionInstanceName}}
       </div>
       <div class="col-sm-12 col-md-2 form-label">
         <label>Scale*</label>
       </div>
-      <div class="col-sm-12 col-md-10">
-        {{input-slider value=scaleValue valueMax=11 scaleMax=12}}
+      <div class="col-sm-1 col-md-1">
+        {{scale}}
+      </div>
+      <div class="col-sm-11 col-md-9">
+        {{input-slider value=scale valueMax=11 scaleMax=12}}
       </div>
     </div>
   </div>
@@ -45,13 +48,14 @@
         </h3>
       <div class={{unless configShown 'hide'}}>
         <div class="row form-group r-mt20">
-          {{! each}}
-          <div class="col-sm-12 col-md-2 form-label">
-            <label>Key 1*</label>
-          </div>
-          <div class="col-sm-12 col-md-10 r-mb20">
-            {{input class='form-control'}}
-          </div>
+          {{#each configParams  as |config|}}
+            <div class="col-sm-12 col-md-2 form-label">
+              <label>{{config.name}}</label>
+            </div>
+            <div class="col-sm-12 col-md-10 r-mb20">
+              {{input class='form-control' value=config.value}}
+            </div>
+          {{/each}}
         </div>
       </div>
     </div>

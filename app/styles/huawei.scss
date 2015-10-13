@@ -42,6 +42,7 @@ $lines-to-show: 4;
     padding: 0 20px;
     h2 {
       display: inline-block;
+      text-transform: capitalize;
     }
     button {
       vertical-align: bottom;
@@ -56,6 +57,11 @@ $lines-to-show: 4;
   margin-right: 35px;
   margin-bottom: 35px;
   float: left;
+  .function-img {
+    max-height: 75px;
+    height: 75px;
+    max-width: 75px;
+  }
   .description {
     display: block;
     /* Fallback for non-webkit */
@@ -217,11 +223,16 @@ $lines-to-show: 4;
 
 .modal-deploy-service {
   .image-container {
-    width: 150px;
+    max-height: 150px;
+    max-width: 150px;
     display: inline-block;
   }
   .content {
     width: 50%;
+    white-space: nowrap;
+    .form-group {
+      white-space: initial;
+    }
   }
   .service-info {
     display: inline-block;
@@ -250,6 +261,11 @@ $lines-to-show: 4;
     background: white;
     cursor: inherit;
     display: block;
+  }
+  .function-img {
+    height: 150px;
+    max-height: 150px;
+    max-width: 150px;
   }
 }
 
