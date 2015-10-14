@@ -20,7 +20,10 @@ If you're on a Mac and use Homebrew, you can follow these steps:
 
 Setup:
 ```bash
-  git clone 'https://github.com/rancher/ui'
+  git clone 'https://github.com/rancherlabs/huawei-ui'
+  cd 'huawei-ui'
+  mkdir ui
+  mv * /ui
   cd 'ui'
   git submodule init
   git submodule update
