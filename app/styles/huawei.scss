@@ -155,6 +155,10 @@ $lines-to-show: 4;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    img {
+      height: 75px;
+      max-width: 75px;
+    }
     &:before,
     &:after
     {
