@@ -7,14 +7,22 @@
         <label>Name*</label>
       </div>
       <div class="col-sm-12 col-md-10">
-        {{input class='form-control' placeholder='Workflow 1'}}
+        {{input class='form-control' placeholder='Workflow 1' value=name}}
+      </div>
+    </div>
+    <div class="row form-group r-mt20">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label>Description*</label>
+      </div>
+      <div class="col-sm-12 col-md-10">
+        {{textarea class='form-control' value=description placeholder='A small description'rows="6"}}
       </div>
     </div>
     <div class="horizontal-form center-block">
       <h1 class="text-center header r-mt20">Service Workflow Elements</h1>
       <hr>
       {{#ember-dragula config=dragulaconfig dragulaEvent='dragulaEvent' }}
-        {{#each serviceFunctions as |function index|}}
+        {{#each serviceWorkflowElements as |function index|}}
             {{#ember-dragula-container }}
               <div class="row form-group r-mt20">
                 <div class="col-sm-12 col-md-3 form-label r-pt5">
@@ -23,10 +31,10 @@
                 </div>
                 <div class="col-sm-12 col-md-9">
                   <select name="item-{{index}}" class="select-service form-control col-md-6" {{action 'selectChange' index on='change'}}>
-                    <option value="0">Select a Service Function</option>
-                    <option value="1">Skyfire</option>
-                    <option value="2">TrendMicro</option>
-                    <option value="3">Something</option>
+                    <option value="">--Select a Service Function</option>
+                    {{#each functions as |function|}}
+                      <option value={{function.name}}>{{function.name}}</option>
+                    {{/each}}
                   </select>
                   <i class="fa fa-bars"></i>
                 </div>

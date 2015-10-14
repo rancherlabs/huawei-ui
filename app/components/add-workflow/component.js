@@ -1,29 +1,60 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  actions: {
-    selectChange(index) {
-        if (index === (this.get('serviceFunctions').length - 1)) {
-          Ember.run(() => {
-            this.get('serviceFunctions').pushObject({
-              value: ''
-            });
-          });
-        }
-      },
-      cancel() {
-        this.sendAction('dismiss');
-      },
-      dragulaEvent() {
-        console.log('yeah bitch');
-      }
+  willInsertElement: function() {
+    Ember.$.ajax('/hw/serviceFunction', 'GET').then((response) => {
+      return this.set('functions', response.serviceFunctions);
+    });
   },
-  serviceFunctions: [{
-    value: ''
+  actions: {
+    selectChange: function(index) {
+      var selectedIndex = index;
+      var selectValue = Ember.$(`[name=item-${index}]`).val();
+      this.get('serviceWorkflowElements').find((item, index, enumerable) => {
+        if (index === selectedIndex) {
+          return item.serviceFunctionName = selectValue;
+        }
+      });
+      if (index === (this.get('serviceWorkflowElements').length - 1)) {
+        Ember.run(() => {
+          this.get('serviceWorkflowElements').pushObject({
+            serviceFunctionName: ''
+          });
+        });
+      }
+    },
+    cancel() {
+      this.sendAction('dismiss');
+    },
+    dragulaEvent() {
+      console.log('yeah bitch');
+    },
+    save: function() {
+      var postObj = {
+        name: this.get('name'),
+        description: this.get('description'),
+        serviceWorkflowElements: []
+      }
+      _.forEach(this.get('serviceWorkflowElements'), (item) => {
+        if (item.serviceFunctionName !== '') {
+          postObj.serviceWorkflowElements.push(item);
+        }
+      });
+      Ember.$.ajax({
+        method: 'POST',
+        url: '/hw/serviceWorkflow/add',
+        data: JSON.stringify(postObj),
+      }).then(() => {
+        this.sendAction('dismiss');
+      }, ( /*error*/ ) => {});
+    }
+  },
+  serviceWorkflowElements: [{
+    serviceFunctionName: ''
   }, {
-    value: ''
+    serviceFunctionName: ''
   }, {
-    value: ''
+    serviceFunctionName: ''
   }],
   'dragulaconfig': {
     'options': {
@@ -46,5 +77,7 @@ export default Ember.Component.extend({
       }, {
         name: 'drop'
       }] // all the events that you want to listen to. TBD - will make this simpler.
-  }
+  },
+  name: null,
+  description: null
 });
