@@ -7,7 +7,7 @@
         <label>Name*</label>
       </div>
       <div class="col-sm-12 col-md-10">
-        {{input class='form-control' placeholder='Service Function'}}
+        {{input class='form-control' placeholder='Service Function' value=name}}
       </div>
     </div>
     <div class="row form-group r-mt20">
@@ -15,7 +15,7 @@
         <label>Description*</label>
       </div>
       <div class="col-sm-12 col-md-10">
-        {{textarea class='form-control' rows='4' placeholder='A smal description of your service function'}}
+        {{textarea class='form-control' rows='4' placeholder='A smal description of your service function' value=description}}
       </div>
     </div>
     <div class="row form-group r-mt20">
@@ -23,7 +23,7 @@
         <label>Docker Image URL*</label>
       </div>
       <div class="col-sm-12 col-md-10">
-        {{input class='form-control'  placeholder='ubuntu-precise-core-cloudimg-amd64-root.tar.gz'}}
+        {{input class='form-control'  placeholder='ubuntu-precise-core-cloudimg-amd64-root.tar.gz' value=image}}
       </div>
     </div>
     <div class="row form-group r-mt20">
@@ -32,10 +32,10 @@
       </div>
       <div class="col-sm-12 col-md-10">
         <div class="input-group">
-          {{input class='form-control file-upload' readonly=true value=destFile}}
+          {{input class='form-control file-upload' readonly=true value=definationFile }}
           <span class="input-group-btn">
             <span class="btn btn-primary btn-file">
-              Browse {{input class='form-control' type='file' value=destFile}}
+              Browse {{input class='form-control' type='file' value=definationFile id="defination-file"}}
             </span>
           </span>
         </div>
@@ -50,7 +50,7 @@
           {{input class='form-control file-upload' readonly=true value=icon}}
           <span class="input-group-btn">
             <span class="btn btn-primary btn-file">
-              Browse {{input class='form-control' type='file' value=icon}}
+              Browse {{input class='form-control' type='file' value=icon id="icon-file"}}
             </span>
           </span>
         </div>

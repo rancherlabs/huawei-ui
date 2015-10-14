@@ -31,7 +31,7 @@ export default Ember.Component.extend({
       revertOnSpill: false,
       removeOnSpill: false,
       ignoreInputTextSelection: true,
-      moves: function(el, source, handle, sibling) {
+      moves: function(el, source, handle) {
         if ($(handle).hasClass('fa-bars')) {
           return true;
         } else {

@@ -24,7 +24,7 @@ export default Ember.Component.extend(NewOrEdit, {
         method: 'POST',
         url: '/hw/serviceFunction/deploy',
         data: postObj,
-      }).then((response) => {
+      }).then(() => {
         this.sendAction('dismiss');
       }, ( /*error*/ ) => {});
     }
