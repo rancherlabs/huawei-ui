@@ -7,5 +7,7 @@
     </div>
   </div>
   {{!#each servicefunction}}
-  {{service-function}}
+  {{#each model as |item|}}
+    {{service-function function=item}}
+  {{/each}}
 </section>

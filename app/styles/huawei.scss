@@ -210,7 +210,9 @@ $lines-to-show: 4;
   }
 
 }
-
+.capitalize {
+  text-transform: capitalize;
+}
 
 /*Modal Content*/
 .modal-deploy-service,

@@ -17,13 +17,13 @@ export default Ember.Component.extend(NewOrEdit, {
       var postObj = {
         serviceFunctionName: this.get('serviceFunction.name'),
         serviceFunctionInstanceName: this.get('serviceFunctionInstanceName'),
-        scale: this.get('scale'),
+        scale: this.get('scale').toString(),
         config_params: configParams
       };
       Ember.$.ajax({
         method: 'POST',
         url: '/hw/serviceFunction/deploy',
-        data: postObj,
+        data: JSON.stringify(postObj),
       }).then(() => {
         this.sendAction('dismiss');
       }, ( /*error*/ ) => {});

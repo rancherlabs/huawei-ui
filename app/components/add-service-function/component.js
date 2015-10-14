@@ -18,7 +18,7 @@ export default Ember.Component.extend(NewOrEdit, {
       _.forEach(postObj, (n, key) => {
         if (key === 'definationFile') {
           var file = Ember.$('#defination-file')[0].files[0];
-          formData.append(key, file, file.name);
+          formData.append('file', file, file.name);
         } else if (key === 'icon') {
           var file = Ember.$('#icon-file')[0].files[0];
           formData.append(key, file, file.name);
