@@ -5,7 +5,7 @@ export default Ember.Component.extend(NewOrEdit, {
   policy: window.lc('authenticated/network-service-tab/service-policies'),
   willInsertElement: function() {
     return Ember.$.ajax('/hw/subscriber', 'GET').then((response) => {
-      this.set('subscribers', response.Subcribers)
+      this.set('subscribers', response.Subcribers);
       return Ember.$.ajax('hw/serviceWorkflow', 'GET').then((response) => {
         return this.set('workflows', response.serviceWorkflows);
       });
@@ -39,7 +39,7 @@ export default Ember.Component.extend(NewOrEdit, {
         IMSI: Ember.$('[name=imsi]').val(),
         serviceWorkflowName: Ember.$('[name=workflow-name]').val(),
         description: this.get('description')
-      }
+      };
       Ember.$.ajax({
         method: 'POST',
         url: '/hw/servicePolicy/add',

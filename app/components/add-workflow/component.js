@@ -11,7 +11,7 @@ export default Ember.Component.extend({
     selectChange: function(index) {
       var selectedIndex = index;
       var selectValue = Ember.$(`[name=item-${index}]`).val();
-      this.get('serviceWorkflowElements').find((item, index, enumerable) => {
+      this.get('serviceWorkflowElements').find((item, index) => {
         if (index === selectedIndex) {
           return item.serviceFunctionName = selectValue;
         }
@@ -35,7 +35,7 @@ export default Ember.Component.extend({
         name: this.get('name'),
         description: this.get('description'),
         serviceWorkflowElements: []
-      }
+      };
       _.forEach(this.get('serviceWorkflowElements'), (item) => {
         if (item.serviceFunctionName !== '') {
           postObj.serviceWorkflowElements.push(item);
@@ -47,7 +47,7 @@ export default Ember.Component.extend({
         data: JSON.stringify(postObj),
       }).then(() => {
         this.sendAction('dismiss');
-        this.get('workflows').send('refreshWorkflows')
+        this.get('workflows').send('refreshWorkflows');
       }, ( /*error*/ ) => {});
     }
   },

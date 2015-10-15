@@ -17,11 +17,12 @@ export default Ember.Component.extend(NewOrEdit, {
       };
       var formData = new FormData();
       _.forEach(postObj, (n, key) => {
+        var file = null;
         if (key === 'definationFile') {
-          var file = Ember.$('#defination-file')[0].files[0];
+          file = Ember.$('#defination-file')[0].files[0];
           formData.append('file', file, file.name);
         } else if (key === 'icon') {
-          var file = Ember.$('#icon-file')[0].files[0];
+          file = Ember.$('#icon-file')[0].files[0];
           formData.append(key, file, file.name);
         } else {
           formData.append(key, n);
