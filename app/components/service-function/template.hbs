@@ -3,7 +3,8 @@
     <div class="header {{unless collapsed 'bordered'}}">
       <i class="fa fa-book"></i>
       <h2 class="inline-block">{{function.name}}</h2>
-      <span class="label label-success">3 Services</span>
+      {{log function}}
+      <span class="label label-success">{{function.container_count}} Container</span>
       <a {{action "toggleCollapse"}} class="toggle hand">{{#if collapsed}}<i class="icon icon-chevron-up"></i>{{else}}<i class="icon icon-chevron-down"></i>{{/if}}</a>
     </div>
     <div class="containers" class={{if collapsed 'hide'}}>
