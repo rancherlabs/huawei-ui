@@ -16,17 +16,21 @@ export default Ember.Controller.extend({
       });
     }
   },
-  search: null,
+  search: '',
   arrangedContent: function() {
-    var search = this.get('search');
+    var search = this.get('search').toUpperCase();
+    var result = [];
 
     if (!search) {
       return this.get('model.catalog.serviceFunctions');
     }
 
-    return this.get('model.catalog.serviceFunctions').filter((item) => {
-      return item.name.indexOf(search) !== -1;
+    this.get('model.catalog.serviceFunctions').forEach((item) => {
+      if (item.name.toUpperCase().indexOf(search) >= 0 || item.description.toUpperCase().indexOf(search) >= 0) {
+        result.push(item);
+      }
     });
+    return result;
   }.property('model.catalog.serviceFunctions', 'search')
 
 });

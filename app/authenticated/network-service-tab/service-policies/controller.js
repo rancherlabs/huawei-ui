@@ -10,16 +10,20 @@ export default Ember.Controller.extend({
       });
     }
   },
-  search: null,
+  search: '',
   arrangedContent: function() {
-    var search = this.get('search');
+    var search = this.get('search').toUpperCase();
+    var result = [];
 
     if (!search) {
       return this.get('model');
     }
 
-    return this.get('model').filter((item) => {
-      return item.name.indexOf(search) !== -1;
+    this.get('model').forEach((item) => {
+      if (item.name.toUpperCase().indexOf(search) >= 0) {
+        result.push(item);
+      }
     });
+    return result;
   }.property('model', 'search')
 });
