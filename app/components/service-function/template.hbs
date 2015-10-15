@@ -9,14 +9,14 @@
     </div>
     <div class="containers" class={{if collapsed 'hide'}}>
       {{#each containers as |container|}}
-        <div class="container-indv row">
+        {{#link-to 'container' container.id class='container-indv row hand' tagName='div'}}
           <div class="col-sm-3 col-md-4">
             <i class="fa fa-server"></i>
             <span class="inline-block">{{container.name}}</span>
           </div>
           <span class="col-sm-3 col-md-4">{{container.IP}}</span>
           <span class="col-sm-3 col-md-4">{{container.id}}</span>
-        </div>
+        {{/link-to}}
       {{/each}}
     </div>
   </div>
