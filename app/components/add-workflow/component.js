@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  workflows: window.lc('authenticated/network-service-tab/service-workflows'),
   willInsertElement: function() {
     Ember.$.ajax('/hw/serviceFunction', 'GET').then((response) => {
       return this.set('functions', response.serviceFunctions);
@@ -46,6 +47,7 @@ export default Ember.Component.extend({
         data: JSON.stringify(postObj),
       }).then(() => {
         this.sendAction('dismiss');
+        this.get('workflows').send('refreshWorkflows')
       }, ( /*error*/ ) => {});
     }
   },

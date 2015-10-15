@@ -9,5 +9,7 @@
       {{input placeholder='search' class='form-control r-pl25' value=search}}
     </div>
   </div>
-  {{service-policy}}
+  {{#each model as |policy|}}
+    {{service-policy policy=policy}}
+  {{/each}}
 </section>

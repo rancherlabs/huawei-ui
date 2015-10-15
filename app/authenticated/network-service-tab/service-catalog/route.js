@@ -11,5 +11,10 @@ export default Ember.Route.extend({
       return newModel;
     }, function(/*error*/){});
 
+  },
+  actions: {
+    refreshCatalog: function() {
+      this.refresh();
+    }
   }
 });

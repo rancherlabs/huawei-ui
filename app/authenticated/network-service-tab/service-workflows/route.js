@@ -5,5 +5,10 @@ export default Ember.Route.extend({
     return Ember.$.ajax('/hw/serviceWorkflow', 'GET').then((response) => {
       return response.serviceWorkflows;
     }, function(/*error*/){});
+  },
+  actions: {
+    refreshWorkflows: function() {
+      this.refresh();
+    }
   }
 });

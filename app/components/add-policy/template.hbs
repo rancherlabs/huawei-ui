@@ -7,7 +7,15 @@
         <label>Name*</label>
       </div>
       <div class="col-sm-12 col-md-10">
-        {{input class='form-control' placeholder='Service Policy Name'}}
+        {{input class='form-control' placeholder='Service Policy Name' value=name}}
+      </div>
+    </div>
+    <div class="row form-group r-mt20">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label>Description*</label>
+      </div>
+      <div class="col-sm-12 col-md-10">
+        {{textarea class='form-control' placeholder='A small description' value=description rows='6'}}
       </div>
     </div>
     <div class="horizontal-form center-block">
@@ -27,15 +35,15 @@
             {{/if}}
           {{/if}}
             <h3 class="inline-block">If</h3>
-            <select name="" class="select-service form-control">
+            <select name="subscriber" class="select-service form-control">
               {{#each policies as |policy index|}}
                 <option value={{policy.name}}>{{policy.name}}</option>
               {{/each}}
             </select>
             <h3 class="inline-block">Is</h3>
-            <select name="" class="select-service form-control">
-              {{#each subscribers as |sub index|}}
-                <option value={{sub}}>{{sub}}</option>
+            <select name="imsi" class="select-service form-control">
+              {{#each subscribers as |sub|}}
+                <option value={{sub.IMSI}}>{{sub.name}}</option>
               {{/each}}
             </select>
             {{#if (eq index 0)}}
@@ -52,9 +60,9 @@
       {{/each}}
       <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 r-mt20 r-mb20">
         <h3 class="inline-block">Attach to Service Workflow</h3>
-        <select name="" class="select-service form-control">
-          {{#each subscribers as |sub index|}}
-            <option value={{sub}}>{{sub}}</option>
+        <select name="workflow-name" class="select-service form-control">
+          {{#each workflows as |workflow|}}
+            <option value={{workflow.name}}>{{workflow.name}}</option>
           {{/each}}
         </select>
       </div>

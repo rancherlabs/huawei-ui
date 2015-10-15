@@ -2,16 +2,16 @@
   <div class="well">
     <div class="header {{unless collapsed 'bordered'}}">
       <i class="fa fa-tags"></i>
-      <h2 class="inline-block">Skyfire Service Optimizer</h2>
+      <h2 class="inline-block capitalize">{{policy.name}}</h2>
       <a {{action "toggleCollapse"}} class="toggle hand">{{#if collapsed}}<i class="icon icon-chevron-up"></i>{{else}}<i class="icon icon-chevron-down"></i>{{/if}}</a>
     </div>
     {{#liquid-spacer growDuration=250 containerless=true}}
       <div class='containers-services {{if collapsed 'hide'}}'>
         <div class="container-service">
-          <h4 class="text-center">Skyfire Service Optimizer</h4>
+          <h4 class="text-center">{{policy.type}}: {{policy.value}}</h4>
         </div>
         <div class="container-service">
-          <h4 class="text-center">Skyfire Service Optimizer</h4>
+          <h4 class="text-center capitalize">{{policy.serviceWorkflowName}}</h4>
         </div>
       </div>
     {{/liquid-spacer}}

@@ -2,6 +2,7 @@ import Ember from 'ember';
 import NewOrEdit from 'ui/mixins/new-or-edit';
 
 export default Ember.Component.extend(NewOrEdit, {
+  catalog: window.lc('authenticated/network-service-tab/service-catalog'),
   actions: {
     cancel: function() {
       this.sendAction('dismiss');
@@ -36,6 +37,7 @@ export default Ember.Component.extend(NewOrEdit, {
         processData: false
       }).then(() => {
         this.sendAction('dismiss');
+        this.get('catalog').send('refreshCatalog');
       }, ( /*error*/ ) => {});
     }
   },
