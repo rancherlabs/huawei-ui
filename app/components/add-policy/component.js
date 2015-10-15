@@ -43,7 +43,7 @@ export default Ember.Component.extend(NewOrEdit, {
       Ember.$.ajax({
         method: 'POST',
         url: '/hw/servicePolicy/add',
-        data: postObj,
+        data: JSON.stringify(postObj),
       }).then(() => {
         this.sendAction('dismiss');
         this.get('policy').send('refreshPolicies');
