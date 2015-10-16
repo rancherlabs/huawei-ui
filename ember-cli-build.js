@@ -22,7 +22,7 @@ module.exports = function(defaults) {
 
     fingerprint: {
       exclude: ['fontawesome'],
-      extensions: (appConfig.fingerprint === 'no' ? [] : ['js','css','png','jpg','gif','svg','map','woff','woff2','ttf']),
+      extensions: [],
     },
 
     sourcemaps: {
