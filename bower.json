@@ -22,6 +22,7 @@
     "jquery.cookie": "~1.4.1",
     "loader.js": "ember-cli/loader.js#3.2.0",
     "lodash": "~3.10.1",
+    "md5-jkmyers": "~0.0.1",
     "position-calculator": "~1.1.2",
     "prism": "gh-pages",
     "qunit": "~1.17.1",
