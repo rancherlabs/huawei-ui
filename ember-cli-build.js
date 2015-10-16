@@ -22,7 +22,7 @@ module.exports = function(defaults) {
 
     fingerprint: {
       exclude: ['fontawesome'],
-      extensions: ['js','css','png','jpg','gif','svg','map','woff','woff2','ttf'],
+      extensions: (appConfig.fingerprint === 'no' ? [] : ['js','css','png','jpg','gif','svg','map','woff','woff2','ttf']),
     },
 
     sourcemaps: {
@@ -72,6 +72,7 @@ module.exports = function(defaults) {
   app.import('vendor/icons/fonts/rancher-icons.woff', {destDir: 'assets/fonts'});
   app.import('bower_components/identicon.js/pnglib.js');
   app.import('bower_components/identicon.js/identicon.js');
+  app.import('bower_components/md5-jkmyers/md5.js');
 
   return app.toTree();
 };
