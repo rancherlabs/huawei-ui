@@ -29,7 +29,7 @@ module.exports = function(environment) {
       'script-src': "'self' releases.rancher.com",
       'object-src': "'self' releases.rancher.com",
       'img-src':    "'self' releases.rancher.com avatars.githubusercontent.com gravatar.com data:",
-      'frame-src':  "'self'",
+      'frame-src':  "'self' releases.rancher.com",
 
       // Allow connect to anywhere, for console and event stream socket
       'connect-src': '*'
@@ -77,6 +77,10 @@ module.exports = function(environment) {
 
   if (process.env.BASE_URL) {
     ENV.baseURL = process.env.BASE_URL;
+  }
+
+  if (process.env.FINGERPRINT) {
+    ENV.APP.fingerprint = process.env.FINGERPRINT;
   }
 
   if (process.env.BASE_ASSETS) {
