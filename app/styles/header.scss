@@ -5,7 +5,7 @@ HEADER {
   position: relative;
   z-index: 5;
   height: $header-height;
-  background-color: #393d48;
+  background-color: #F1F2F6;
 
   NAV {
     &>A, &>.btn-group>A {
@@ -29,8 +29,8 @@ HEADER {
 
 
       &.active {
-        color: white;
-        background-color: #292c36;
+        color: #36B7E1;
+        background-color: white;
       }
     }
   }
@@ -52,7 +52,7 @@ HEADER {
       background-position: 12px 4px, center;
       background-repeat: no-repeat;
       .project-name {
-        color: white;
+        color: #858999;
         position: relative;
         font-size: 13px;
         top: 32px;
@@ -164,10 +164,17 @@ HEADER {
 
   .bottom-row {
     height: ($header-height/2);
-    background-color: #292c36;
+    background-color: white;
 
     NAV {
       font-size: 14px;
+      a {
+        &.active {
+          color: #36B7E1;
+          background-color: white;
+          border-bottom: 1px solid #36B7E1;
+        }
+      }
     }
   }
 
