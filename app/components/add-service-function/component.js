@@ -1,5 +1,7 @@
 import Ember from 'ember';
 import NewOrEdit from 'ui/mixins/new-or-edit';
+import C from 'ui/utils/constants';
+
 
 export default Ember.Component.extend(NewOrEdit, {
   catalog: window.lc('authenticated/network-service-tab/service-catalog'),
@@ -30,8 +32,13 @@ export default Ember.Component.extend(NewOrEdit, {
       });
       Ember.$.ajax({
         method: 'POST',
-        url: '/hw/serviceFunction/add',
+        url: `/v1/proxy/${C.HAUWEI.API_ENDPOINT}/serviceFunction/add`,
         data: formData,
+        headers: {
+          'Accept': 'application/json',
+          'X-API-Headers-Restrict': 'Content-Length',
+          'x-api-csrf': Ember.$.cookie('CSRF')
+        },
         //Options to tell jQuery not to process data or worry about content-type.
         cache: false,
         contentType: false,

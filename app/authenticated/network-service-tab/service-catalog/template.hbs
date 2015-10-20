@@ -29,8 +29,8 @@
     <div class="col-md-12 r-pl15 r-pr15">
       {{#each arrangedContent as |function|}}
         <div class="container-catalog text-center">
-          <img src='/hw{{function.iconLocation}}' alt='{{function.name}}' class="center-block r-mt20 function-img">
-          <div class="r-mt15">{{function.name}}</div>
+          <img src='/v1/proxy/{{imageEndpoint}}{{function.iconLocation}}' alt='{{function.name}}' class="center-block r-mt20 function-img">
+          <div class="r-mt15">{{function.name}}</div> 
           <div class="r-mt10 description">{{function.description}}</div>
           <button class="btn btn-sm btn-primary" {{action 'launch' function}}><i class="fa fa-upload"></i> Launch</button>
         </div>

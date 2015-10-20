@@ -10,7 +10,7 @@
         <div class='containers-services {{if collapsed 'hide'}}'>
           {{#each services as |service|}}
             <div class="container-service">
-              <img src='/hw{{service.iconLocation}}' alt={{service.name}} class="center-block">
+              <img src='/v1/proxy/{{imageEndpoint}}{{service.iconLocation}}' alt={{service.name}} class="center-block">
               <h4 class="text-center">{{service.name}}</h4>
             </div>
           {{/each}}

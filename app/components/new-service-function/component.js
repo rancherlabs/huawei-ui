@@ -1,7 +1,9 @@
 import Ember from 'ember';
 import NewOrEdit from 'ui/mixins/new-or-edit';
+import C from 'ui/utils/constants';
 
 export default Ember.Component.extend(NewOrEdit, {
+  imageEndpoint: C.HAUWEI.API_ENDPOINT,
   actions: {
     toggleConfig: function() {
       this.toggleProperty('configShown');
@@ -22,7 +24,7 @@ export default Ember.Component.extend(NewOrEdit, {
       };
       Ember.$.ajax({
         method: 'POST',
-        url: '/hw/serviceFunction/deploy',
+        url: `/v1/proxy/${C.HAUWEI.API_ENDPOINT}/serviceFunction/deploy`,
         data: JSON.stringify(postObj),
       }).then(() => {
         this.sendAction('dismiss');

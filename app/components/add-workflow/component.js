@@ -1,9 +1,10 @@
 import Ember from 'ember';
+import C from 'ui/utils/constants';
 
 export default Ember.Component.extend({
   workflows: window.lc('authenticated/network-service-tab/service-workflows'),
   willInsertElement: function() {
-    Ember.$.ajax('/hw/serviceFunction', 'GET').then((response) => {
+    Ember.$.ajax(`/v1/proxy/${C.HAUWEI.API_ENDPOINT}/serviceFunction`, 'GET').then((response) => {
       return this.set('functions', response.serviceFunctions);
     });
   },
@@ -43,7 +44,7 @@ export default Ember.Component.extend({
       });
       Ember.$.ajax({
         method: 'POST',
-        url: '/hw/serviceWorkflow/add',
+        url: `/v1/proxy/${C.HAUWEI.API_ENDPOINT}/serviceWorkflow/add`,
         data: JSON.stringify(postObj),
       }).then(() => {
         this.sendAction('dismiss');

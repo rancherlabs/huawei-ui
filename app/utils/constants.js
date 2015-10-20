@@ -85,6 +85,10 @@ var C = {
     HOSTNAME_OVERRIDE_VALUE: 'container_name',
     BALANCER_SSL_PORTS: 'io.rancher.loadbalancer.ssl.ports',
   },
+
+  HAUWEI: {
+    API_ENDPOINT: 'http://104.130.140.175/com.huawei.dockerMSD'
+  }
 };
 
 C.TOKEN_TO_SESSION_KEYS = [

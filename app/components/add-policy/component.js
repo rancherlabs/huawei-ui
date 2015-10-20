@@ -1,12 +1,13 @@
 import Ember from 'ember';
 import NewOrEdit from 'ui/mixins/new-or-edit';
+import C from 'ui/utils/constants';
 
 export default Ember.Component.extend(NewOrEdit, {
   policy: window.lc('authenticated/network-service-tab/service-policies'),
   willInsertElement: function() {
-    return Ember.$.ajax('/hw/subscriber', 'GET').then((response) => {
+    return Ember.$.ajax(`/v1/proxy/${C.HAUWEI.API_ENDPOINT}/subscriber`, 'GET').then((response) => {
       this.set('subscribers', response.Subcribers);
-      return Ember.$.ajax('hw/serviceWorkflow', 'GET').then((response) => {
+      return Ember.$.ajax(`/v1/proxy/${C.HAUWEI.API_ENDPOINT}/serviceWorkflow`, 'GET').then((response) => {
         return this.set('workflows', response.serviceWorkflows);
       });
     });
@@ -42,7 +43,7 @@ export default Ember.Component.extend(NewOrEdit, {
       };
       Ember.$.ajax({
         method: 'POST',
-        url: '/hw/servicePolicy/add',
+        url: `/v1/proxy/${C.HAUWEI.API_ENDPOINT}/servicePolicy/add`,
         data: JSON.stringify(postObj),
       }).then(() => {
         this.sendAction('dismiss');

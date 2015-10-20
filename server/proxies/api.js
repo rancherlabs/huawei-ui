@@ -23,20 +23,6 @@ module.exports = function(app, options) {
   });
 
 
-  var huaweiApi = '/hw';
-  app.use(huaweiApi, function(req, res, next){
-    var huaweiProxy = HttpProxy.createProxyServer({
-      ws: true,
-      xfwd: false,
-      target: 'http://45.55.19.219:8080/com.huawei.dockerMSD'
-    });
-    // include root path in proxied request
-    //req.url = path.join(apiPath, req.url);
-
-    console.log('API Proxy', req.method, 'to', req.url);
-    huaweiProxy.web(req, res);
-  });
-
   proxy.on('error', function onProxyError(err, req, res) {
     console.log('Proxy Error: on', req.method,'to', req.url,':', err);
     var error = {

@@ -1,7 +1,10 @@
 import Ember from 'ember';
+import C from 'ui/utils/constants';
+
 
 export default Ember.Controller.extend({
   needs: ['application'],
+  imageEndpoint: C.HAUWEI.API_ENDPOINT,
   actions: {
     add() {
       this.get('controllers.application').setProperties({
