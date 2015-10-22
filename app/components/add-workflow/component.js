@@ -45,7 +45,16 @@ export default Ember.Component.extend({
       Ember.$.ajax({
         method: 'POST',
         url: `/v1/proxy/${C.HAUWEI.API_ENDPOINT}/serviceWorkflow/add`,
-        data: JSON.stringify(postObj),
+        headers: {
+          'Accept': 'application/json',
+          'X-API-Headers-Restrict': 'Content-Length',
+          'x-api-csrf': Ember.$.cookie('CSRF')
+        },
+        //Options to tell jQuery not to process data or worry about content-type.
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: JSON.stringify(postObj)
       }).then(() => {
         this.sendAction('dismiss');
         this.get('workflows').send('refreshWorkflows');
