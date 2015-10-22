@@ -50,7 +50,7 @@
         <div class="row form-group r-mt20">
           {{#each configParams  as |config|}}
             <div class="col-sm-12 col-md-2 form-label">
-              <label>{{config.name}}</label>
+              <label class="force-wrap">{{config.name}}</label>
             </div>
             <div class="col-sm-12 col-md-10 r-mb20">
               {{input class='form-control' value=config.value}}
