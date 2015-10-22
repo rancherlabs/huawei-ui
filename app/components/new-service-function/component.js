@@ -25,6 +25,15 @@ export default Ember.Component.extend(NewOrEdit, {
       Ember.$.ajax({
         method: 'POST',
         url: `/v1/proxy/${C.HAUWEI.API_ENDPOINT}/serviceFunction/deploy`,
+        headers: {
+          'Accept': 'application/json',
+          'X-API-Headers-Restrict': 'Content-Length',
+          'x-api-csrf': Ember.$.cookie('CSRF')
+        },
+        //Options to tell jQuery not to process data or worry about content-type.
+        cache: false,
+        contentType: false,
+        processData: false,
         data: JSON.stringify(postObj),
       }).then(() => {
         this.sendAction('dismiss');
