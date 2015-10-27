@@ -45,6 +45,26 @@ Run development server pointed at another instance of the Rancher API
 
 RANCHER_ENDPOINT can also be `hostname[:8080]` or `ip[:8080]`.
 
+
+### Point Rancher to UI
+* Navigate to `http://<your.rancher.ip>:8080/v1/activesettings/1as!api.ui.index`
+* Select `edit` from the menu on the right
+* change the default value of `loacl` to `//releases.rancher.com/ui/huawei`
+* Select `show request`
+* Select `send request`
+* Refresh and ensure the new value is present 
+
+### Add  New API to proxy 
+* Navigate to `http://<your.rancher.ip>:8080/v1/activesettings/1as!api.proxy.whitelist`
+* Select `edit` from the menu on the right
+* Add the new ip for the new api server to the end of the list
+* Select `show request`
+* Select `send request`
+* Refresh and ensure the new value is present 
+* Refresh and ensure the new value is present 
+* The UI needs to be updated with this new IP for the proxy so please let me know
+
+
 ### Compiling for distribution
 
 The built-in cattle server expects to be run from `/static/` and hosted on a CDN.  To generate the CDN files, run:
