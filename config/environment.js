@@ -39,7 +39,7 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
       version: pkg.version,
-      appName: 'Rancher',
+      appName: 'Huawei',
       endpoint: 'http://localhost:8080',
       apiEndpoint: '/v1',
       wsEndpoint: '/v1/subscribe?eventNames=resource.change' +
