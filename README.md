@@ -61,9 +61,16 @@ RANCHER_ENDPOINT can also be `hostname[:8080]` or `ip[:8080]`.
 * Select `show request`
 * Select `send request`
 * Refresh and ensure the new value is present 
-* Refresh and ensure the new value is present 
-* The UI needs to be updated with this new IP for the proxy so please let me know
+* See the next section to add the api endpoint to the UI
 
+### Add New API Endpoint to UI
+* Navigate to `http://<your.rancher.ip>:8080/v1/settings`
+* Select `create` from the menu on the right
+* Enter the name `huawei.endpoint` in the name field
+* Enter the ip (e.g `http://0.0.0.0:80`) in the value field
+* Select `show request`
+* Select `send request`
+* Refresh and ensure the new value is present 
 
 ### Compiling for distribution
 

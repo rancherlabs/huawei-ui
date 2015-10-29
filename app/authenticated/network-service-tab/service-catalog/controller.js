@@ -4,7 +4,9 @@ import C from 'ui/utils/constants';
 
 export default Ember.Controller.extend({
   needs: ['application'],
-  imageEndpoint: C.HAUWEI.API_ENDPOINT,
+  imageEndpoint: Ember.computed('C.HAUWEI.API_ENDPOINT', function() {
+    return C.HAUWEI.API_ENDPOINT;
+  }),
   actions: {
     add() {
       this.get('controllers.application').setProperties({

@@ -87,7 +87,7 @@ var C = {
   },
 
   HAUWEI: {
-    API_ENDPOINT: 'http://104.130.140.175/com.huawei.dockerMSD'
+    API_ENDPOINT: null
   }
 };
 
