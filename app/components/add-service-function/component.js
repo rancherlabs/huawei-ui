@@ -55,10 +55,18 @@ export default Ember.Component.extend(NewOrEdit, {
   name: null,
   description: null,
   readableDefPath: Ember.computed('definationFile', function() {
-    return this.parsePath(this.get('definationFile'));
+    var out;
+    Ember.run(() => {
+      out = this.parsePath(this.get('definationFile'));
+    });
+    return out;
   }),
   readableImagePath: Ember.computed('icon', function() {
-    return this.parsePath(this.get('icon'));
+    var out;
+    Ember.run(() => {
+     out = this.parsePath(this.get('icon'));
+    });
+    return out;
   }),
   parsePath: function(path) {
     var out;
