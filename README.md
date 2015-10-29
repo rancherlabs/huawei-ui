@@ -67,7 +67,7 @@ RANCHER_ENDPOINT can also be `hostname[:8080]` or `ip[:8080]`.
 * Navigate to `http://<your.rancher.ip>:8080/v1/settings`
 * Select `create` from the menu on the right
 * Enter the name `huawei.endpoint` in the name field
-* Enter the ip (e.g `http://0.0.0.0:80`) in the value field *note* you do not actually need the port if the api is running on 80
+* Enter the ip (e.g `http://0.0.0.0:80`) in the value field *note: you do not actually need the port if the api is running on 80*
 * Select `show request`
 * Select `send request`
 * Refresh and ensure the new value is present 
