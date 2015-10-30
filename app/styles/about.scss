@@ -19,6 +19,10 @@
     height: 110px;
   }
 
+  .logo-text-huawei {
+
+  }
+
   .parachute {
     opacity: 0.75;
     -webkit-animation: parachute-animation 20s cubic-bezier(0.05, -0.23, 0.13, 0.6) forwards;
@@ -27,11 +31,11 @@
     animation: parachute-animation 20s cubic-bezier(0.05, -0.23, 0.13, 0.6) forwards;
     background-image: url(images/logo_parachute.svg);
     background-repeat: no-repeat;
-    position: relative;
+    position: absolute;
     width: 74px;
     height: 100px;
-    top: -10px;
-    left: calc(50% - 227px);
+    top: 10px;
+    left: calc(50% - 327px);
   }
 
 }
