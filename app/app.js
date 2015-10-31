@@ -13,6 +13,9 @@ App = Ember.Application.extend({
   Resolver: Resolver
 });
 
+
+window.document.title = 'Huawei';
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;
