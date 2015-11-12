@@ -16,5 +16,8 @@ export default Ember.Component.extend({
       }
     }
   },
-  collapsed: true
+  collapsed: true,
+  imageEndpoint: Ember.computed('C.HAUWEI.API_ENDPOINT', function() {
+    return C.HAUWEI.API_ENDPOINT;
+  }),
 });

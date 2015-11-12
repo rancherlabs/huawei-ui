@@ -1,9 +1,9 @@
 <div class="r-pl15 r-pr15">
   <div class="well">
     <div class="header {{unless collapsed 'bordered'}}">
-      <i class="fa fa-book"></i>
+            {{log function}}
+      <img src='/v1/proxy/{{imageEndpoint}}{{function.iconLocation}}' alt='{{function.name}}' class="r-mr20 function-img">
       <h2 class="inline-block">{{function.name}}</h2>
-      {{log function}}
       <span class="label label-success">{{function.container_count}} Container</span>
       <a {{action "toggleCollapse"}} class="toggle hand">{{#if collapsed}}<i class="icon icon-chevron-up"></i>{{else}}<i class="icon icon-chevron-down"></i>{{/if}}</a>
     </div>

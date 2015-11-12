@@ -49,6 +49,11 @@ $lines-to-show: 4;
     }
   }
 }
+.function-img {
+  max-height: 75px;
+  height: 75px;
+  max-width: 75px;
+}
 
 .container-catalog {
   background: white;
@@ -57,11 +62,6 @@ $lines-to-show: 4;
   margin-right: 35px;
   margin-bottom: 35px;
   float: left;
-  .function-img {
-    max-height: 75px;
-    height: 75px;
-    max-width: 75px;
-  }
   .description {
     display: block;
     /* Fallback for non-webkit */

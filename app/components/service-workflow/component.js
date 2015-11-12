@@ -19,5 +19,14 @@ export default Ember.Component.extend(NewOrEdit, {
       }
     }
   },
-  collapsed: true
+  willInsertElement: function() {
+    if (!this.get('collapsed')) {
+      var serviceName = this.get('workflow.name');
+      Ember.$.ajax(`/v1/proxy/${C.HAUWEI.API_ENDPOINT}/serviceWorkflow/view?name=${serviceName}`, 'GET').then((response) => {
+        this.set('services', response.serviceFunctinElements);
+        return response;
+      }, function( /*error*/ ) {});
+    }
+  },
+  collapsed: false
 });
